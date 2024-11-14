@@ -1,19 +1,19 @@
 
 
 
-# def binary_decimal(n):
-#     sum = 0
-#     for i in range(len(n)):
-#         val = int(n[i])
+def binary_decimal(n):
+    sum = 0
+    for i in range(len(n)):
+        val = int(n[i])
 
-#         if val != 0 and val != 1:
-#             print("Binary value must be 0 or 1")
-#             return None
+        if val != 0 and val != 1:
+            print("Binary value must be 0 or 1")
+            return None
             
-#         sum += val * 2**(len(n) - (i+1))
-#     return sum
-# n =  int(input())
-# print(binary_decimal(str(n)))
+        sum += val * 2**(len(n) - (i+1))
+    return sum
+n =  int(input("Enter binary value(ie. 0's and 1's) to convert: "))
+print(binary_decimal(str(n)))
 
 
 #Decimal to Binary
@@ -27,7 +27,11 @@ def decimal_binary(n):
             div = n%2
             bi_to_dec.append(div)
             n = n//2
-    return bi_to_dec[::-1]
+    result=''
+    for i in bi_to_dec[::-1]:
+        i=str(i)
+        result+=i
+    return result
 
 n = int(input("Enter decimal value to convert to binary: "))
 print(decimal_binary(n))
@@ -72,7 +76,7 @@ def binary_hexadecimal(n):
                 return binary_decimal(k)
             # return number.append(binary_decimal(k))
 
-    return            
+    return         
 
 
                 
