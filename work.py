@@ -9,23 +9,8 @@ print("""Welcome to your number systen calculator!
     Enter 6 to convert from Hexadecimal to Binary
  """)
 
-choice = int(input("Enter a number: "))
 
-if choice == 1:
-    binary_decimal()
-    
-elif choice == 2:
-    decimal_binary()
-elif choice == 3:
-    binary_hexadecimal()
-elif choice == 4:
-    hexa_decimal()
-elif choice == 5:
-    decimal_hexadecimal()
-elif choice == 6:
-    hexadecimal_binary()
-else:
-    print("Invalid choice")
+
 
 
 
@@ -42,8 +27,7 @@ def binary_decimal(n):
             
         sum += int(val) * 2**(len(n) - (i+1))  # multiply each value by 2 power the index from the right
     return sum   # Return the sum of the values to get the decimal equivalent
-n =  int(input("Enter binary digits(0's or 1's) to convert to decimal: "))
-print(binary_decimal(n))
+
 
 
 
@@ -66,8 +50,7 @@ def decimal_binary(n):
         result+=i  # add values 
     return result
 
-n = int(input("Enter decimal value to convert to binary: "))
-print(decimal_binary(n))
+
 
 
 
@@ -122,8 +105,7 @@ def binary_hexadecimal(n):
 
     return hexa_val
         
-n = int(input("Enter binary digits(0's and 1's) to convert to hexadeximal: "))
-print(binary_hexadecimal(n))
+
 
 
 
@@ -160,8 +142,7 @@ def hexa_decimal(n):
 
     return sum
 
-n = input("Enter hexadecimal equiv. to convert to decimal: ")
-print(hexa_decimal(n))
+
 
 
 
@@ -201,8 +182,6 @@ def decimal_hexadecimal(n):
             hex_store = hex_store + i
     return hex_store
 
-n = int(input("Enter decimal value to covnvert to Hexadecimal: "))
-print(decimal_hexadecimal(n))
 
 
 
@@ -247,10 +226,39 @@ def hexadecimal_binary(n):
         
         concat_str = concat_str + l  # concatenating the each index to produce the final result
             
-
     return concat_str
-n = input("Enter hexadecimal value to convert to binary: ")
-print(hexadecimal_binary(n))
+
+
+
+choice = int(input("Enter a number: "))
+
+
+if choice == 1:    
+    n =  int(input("Enter binary digits(0's or 1's) to convert to decimal: "))
+    print(binary_decimal(n))
+    
+elif choice == 2:    
+    n = int(input("Enter decimal value to convert to binary: "))
+    print(decimal_binary(n))
+
+elif choice == 3:    
+    n = int(input("Enter binary digits(0's and 1's) to convert to hexadeximal: "))
+    print(binary_hexadecimal(n))
+
+elif choice == 4:    
+    n = input("Enter hexadecimal equiv. to convert to decimal: ")
+    print(hexa_decimal(n))    
+
+elif choice == 5:   
+    n = int(input("Enter decimal value to covnvert to Hexadecimal: "))
+    print(decimal_hexadecimal(n))
+
+elif choice == 6:   
+    n = input("Enter hexadecimal value to convert to binary: ")
+    print(hexadecimal_binary(n))
+
+else:
+    print("Invalid choice")
 
 
 
