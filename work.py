@@ -1,3 +1,34 @@
+
+print("""Welcome to your number systen calculator!
+    What do you want to convert?
+    Enter 1 to convert from Binary to Decimal
+    Enter 2 to convert from Decimal to Binary
+    Enter 3 to convert from Binary to Hexadecimal
+    Enter 4 to convert from Hexadecimal to Decimal
+    Enter 5 to convert from Decimal to Hexadecimal
+    Enter 6 to convert from Hexadecimal to Binary
+ """)
+
+choice = int(input("Enter a number: "))
+
+if choice == 1:
+    binary_decimal()
+    
+elif choice == 2:
+    decimal_binary()
+elif choice == 3:
+    binary_hexadecimal()
+elif choice == 4:
+    hexa_decimal()
+elif choice == 5:
+    decimal_hexadecimal()
+elif choice == 6:
+    hexadecimal_binary()
+else:
+    print("Invalid choice")
+
+
+
 #BINARY TO DECIMAL
 def binary_decimal(n):
     n = str(n)
@@ -11,7 +42,7 @@ def binary_decimal(n):
             
         sum += int(val) * 2**(len(n) - (i+1))  # multiply each value by 2 power the index from the right
     return sum   # Return the sum of the values to get the decimal equivalent
-n =  int(input("enter binary digits to convert to decimal: "))
+n =  int(input("Enter binary digits(0's or 1's) to convert to decimal: "))
 print(binary_decimal(n))
 
 
@@ -49,7 +80,7 @@ def binary_hexadecimal(n):
         sort_list = []
         # if val != '0' and val != '1':  # value must be 0 or 1
         #     print("Invalid input of binary digit") 
-               
+            
         
         if len(n)%4 != 0: 
             """check if the length of the number is can be grouped into 4 bits
@@ -62,7 +93,7 @@ def binary_hexadecimal(n):
         
         for j in range(0, len(n), 4):  # group numbers into 4's
             sort_list.append(n[j:j+4])  # append the 4 bits into a sort_list list as an index each
-                      
+                    
     result=[]    
     for k in range(len(sort_list)):
         result.append(binary_decimal(sort_list[k]))  # call the binary_decimal function on the indices in the sort_list
@@ -90,8 +121,8 @@ def binary_hexadecimal(n):
         hexa_val += hexa  # concatenating string values
 
     return hexa_val
-         
-n = int(input("Enter binary digits to convert to hexadeximal: "))
+        
+n = int(input("Enter binary digits(0's and 1's) to convert to hexadeximal: "))
 print(binary_hexadecimal(n))
 
 
@@ -120,7 +151,7 @@ def hexa_decimal(n):
             hd
 
         li.append(hd)  #append each value of the user input into the empty list
-   
+
     sum = 0 
     for k in range(len(li)):
         val = int(li[k])  #convert each value of the index of the list to integer
@@ -218,16 +249,22 @@ def hexadecimal_binary(n):
             
 
     return concat_str
-n = input("Enter number: ")
+n = input("Enter hexadecimal value to convert to binary: ")
 print(hexadecimal_binary(n))
 
 
 
 
+ 
 
 
-        
-        
+
+
+
+
+
+            
+            
 
 
 
