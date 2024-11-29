@@ -232,6 +232,8 @@ def hexadecimal_binary(n):
 
 choice = int(input("Enter a number: "))
 
+# User choice to direct user to the desired computation
+
 
 if choice == 1:    
     n =  int(input("Enter binary digits(0's or 1's) to convert to decimal: "))
