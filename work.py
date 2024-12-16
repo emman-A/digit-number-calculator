@@ -47,7 +47,7 @@ def decimal_binary(n):
     result=''
     for i in bi_to_dec[::-1]:  # reverse the list
         i=str(i)
-        result+=i  # add values 
+        result += i  # add values 
     return result
 
 
@@ -59,14 +59,10 @@ def decimal_binary(n):
 def binary_hexadecimal(n):
     n = str(n)  # intger value converted to string
     for i in range(len(n)):  
-        val = n[i]  # find string index of n
         sort_list = []
-        # if val != '0' and val != '1':  # value must be 0 or 1
-        #     print("Invalid input of binary digit") 
             
-        
         if len(n)%4 != 0: 
-            """check if the length of the number is can be grouped into 4 bits
+            """check if the length of the number can be grouped into 4 bits
         and also number is 0 or 1""" 
             for i in range(4 - len(n)%4): 
                 num = i*0
@@ -80,7 +76,6 @@ def binary_hexadecimal(n):
     result=[]    
     for k in range(len(sort_list)):
         result.append(binary_decimal(sort_list[k]))  # call the binary_decimal function on the indices in the sort_list
-    # return result
 
     hexa_val = ''
     for i in result[:]:
@@ -112,7 +107,6 @@ def binary_hexadecimal(n):
 
 # HEXADECIMAL TO DECIMAL
 def hexa_decimal(n):
-    # n = str(n)
     hexa_deca = ''
     li = []
     for i in range(len(n)):
@@ -137,9 +131,7 @@ def hexa_decimal(n):
     sum = 0 
     for k in range(len(li)):
         val = int(li[k])  #convert each value of the index of the list to integer
-
         sum += val * 16**(len(n) - (k+1))  # computing for the decimal equivalent
-
     return sum
 
 
@@ -159,7 +151,6 @@ def decimal_hexadecimal(n):
             mod = n % 16  # calculating for the remainder/modulo of base 16
             dec_hex.insert(0, mod)
             n = n//16
-        # print(dec_hex)
 
         hex_store = ''
         for i in dec_hex[:]: 
@@ -208,8 +199,6 @@ def hexadecimal_binary(n):
             dig = '15'
         else:
             dig
-
-        # dig = int(dig)
         hex_bi.append(int(dig))  # convert string values back to integer for maipulation
     hex_bi2 = []
     
